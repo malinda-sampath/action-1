@@ -1,0 +1,21 @@
+name: Generate ASCII Artwork
+
+on: 
+    push
+
+jobs:
+    first_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout repo
+          uses: actions/checkout@v4
+
+        - name: Chechout repo files
+          run: ls -ltra
+
+        - name: Executing Shell Scripts
+          run: 
+            chmod +x ascii-script.sh
+            ./ascii-script.sh
+
+
